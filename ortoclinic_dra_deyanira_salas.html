@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ORTOCLINIC Dra. Deyanira Salas | Ortodoncista en Soledad de Graciano Sánchez</title>
+  <meta name="description" content="ORTOCLINIC Dra. Deyanira Salas, clínica dental y ortodoncista en Soledad de Graciano Sánchez. Ortodoncia, valoración dental y atención personalizada." />
+  <meta name="keywords" content="Ortodoncista en Soledad de Graciano Sánchez, Ortodoncia en San Luis Potosí, Clínica dental en Soledad, Dra. Deyanira Salas, ORTOCLINIC" />
+  <meta name="author" content="ORTOCLINIC Dra. Deyanira Salas" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #39b8d4;
+      --primary-dark: #0c7892;
+      --aqua: #6ee7d8;
+      --soft-aqua: #e9fbf8;
+      --blue-soft: #eaf8ff;
+      --gray: #667085;
+      --dark: #102a43;
+      --white: #ffffff;
+      --line: #e5eef2;
+      --shadow: 0 20px 60px rgba(16, 42, 67, 0.12);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: #f8fcfd;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1180px, 92%); margin: 0 auto; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--aqua));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 24px;
+      box-shadow: 0 12px 30px rgba(57,184,212,.25);
+    }
+    .brand span small {
+      display: block;
+      font-weight: 600;
+      color: var(--gray);
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+    .menu {
+      display: flex;
+      gap: 22px;
+      color: #344054;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .menu a:hover { color: var(--primary-dark); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: .25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      box-shadow: 0 14px 28px rgba(57,184,212,.26);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 34px rgba(57,184,212,.34); }
+    .btn-outline { color: var(--primary-dark); background: white; border-color: #bcecf3; }
+    .btn-outline:hover { background: var(--blue-soft); transform: translateY(-2px); }
+    .hero {
+      position: relative;
+      padding: 82px 0 70px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(110,231,216,.45), transparent 30%),
+        linear-gradient(135deg, #ffffff 0%, #eefbff 52%, #effcf9 100%);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      background: rgba(57,184,212,.12);
+      border-radius: 50%;
+      left: -160px;
+      top: 120px;
+    }
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      border: 1px solid #d6f5f5;
+      color: var(--primary-dark);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(16,42,67,.08);
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: .98;
+      letter-spacing: -0.07em;
+      margin-bottom: 22px;
+      color: #0b2538;
+    }
+    .hero p {
+      font-size: clamp(17px, 2vw, 21px);
+      color: #4b6072;
+      max-width: 620px;
+      margin-bottom: 30px;
+    }
+    .hero-actions, .cta-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-card {
+      position: relative;
+      border-radius: 34px;
+      overflow: hidden;
+      min-height: 520px;
+      box-shadow: var(--shadow);
+      background: linear-gradient(135deg, rgba(57,184,212,.18), rgba(110,231,216,.18));
+      padding: 14px;
+    }
+    .hero-photo {
+      height: 100%;
+      min-height: 492px;
+      border-radius: 26px;
+      background:
+        linear-gradient(rgba(7,36,54,.08), rgba(7,36,54,.22)),
+        url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=80') center/cover;
+    }
+    .floating-review {
+      position: absolute;
+      left: 32px;
+      bottom: 32px;
+      right: 32px;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(14px);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 18px 45px rgba(16,42,67,.14);
+    }
+    .stars { color: #f9b233; letter-spacing: 2px; font-size: 18px; }
+    .floating-review strong { display: block; margin-top: 4px; }
+    .floating-review small { color: var(--gray); }
+    section { padding: 82px 0; }
+    .section-title { text-align: center; max-width: 760px; margin: 0 auto 42px; }
+    .eyebrow { color: var(--primary-dark); font-weight: 800; text-transform: uppercase; letter-spacing: .12em; font-size: 13px; margin-bottom: 10px; }
+    h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.05em; margin-bottom: 14px; }
+    .section-title p, .lead { color: var(--gray); font-size: 17px; }
+    .about {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: center;
+    }
+    .about-image {
+      min-height: 440px;
+      border-radius: var(--radius);
+      background: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1100&q=80') center/cover;
+      box-shadow: var(--shadow);
+    }
+    .panel {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: 0 12px 40px rgba(16,42,67,.06);
+    }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .service-card, .trust-card, .review-card, .gallery-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 12px 36px rgba(16,42,67,.06);
+      transition: .25s ease;
+    }
+    .service-card:hover, .trust-card:hover, .gallery-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue-soft), var(--soft-aqua));
+      color: var(--primary-dark);
+      font-size: 25px;
+      margin-bottom: 18px;
+    }
+    .service-card h3, .trust-card h3, .review-card h3 { margin-bottom: 8px; font-size: 19px; }
+    .service-card p, .trust-card p, .review-card p, .gallery-card p { color: var(--gray); }
+    .reviews { background: linear-gradient(135deg, #f2fbff, #f5fffc); }
+    .rating-box {
+      text-align: center;
+      background: white;
+      border: 1px solid #d9f6f6;
+      border-radius: 28px;
+      padding: 28px;
+      margin: 0 auto 26px;
+      max-width: 460px;
+      box-shadow: var(--shadow);
+    }
+    .rating-box .number { font-size: 56px; font-weight: 900; letter-spacing: -0.06em; color: var(--primary-dark); }
+    .vision-card {
+      text-align: center;
+      max-width: 920px;
+      margin: auto;
+      background: linear-gradient(135deg, var(--primary-dark), #0b5266);
+      color: white;
+      border-radius: 34px;
+      padding: 54px 36px;
+      box-shadow: var(--shadow);
+    }
+    .vision-card p { color: rgba(255,255,255,.86); font-size: 20px; }
+    .location-wrap {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .info-list { display: grid; gap: 14px; margin: 22px 0; }
+    .info-item { display: flex; gap: 12px; align-items: flex-start; color: #475467; }
+    .info-item strong { color: var(--dark); display: block; }
+    iframe {
+      width: 100%;
+      min-height: 430px;
+      border: 0;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .gallery-card { padding: 12px; overflow: hidden; }
+    .gallery-card .photo { height: 220px; border-radius: 18px; margin-bottom: 14px; background-size: cover; background-position: center; }
+    .cta { background: linear-gradient(135deg, #eaf8ff, #e9fbf8); }
+    .cta-box {
+      text-align: center;
+      border-radius: 34px;
+      padding: 58px 28px;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .cta-box p { color: var(--gray); max-width: 680px; margin: 0 auto 28px; font-size: 18px; }
+    .cta-actions { justify-content: center; }
+    footer {
+      background: #082333;
+      color: white;
+      padding: 54px 0 28px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 32px;
+      padding-bottom: 34px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    footer p, footer a { color: rgba(255,255,255,.76); }
+    .footer-links { display: grid; grid-template-columns: repeat(2, max-content); gap: 10px 28px; }
+    .copyright { padding-top: 22px; color: rgba(255,255,255,.55); font-size: 14px; }
+    .float-buttons {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 200;
+      display: grid;
+      gap: 12px;
+    }
+    .float-btn {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 24px;
+      box-shadow: 0 16px 32px rgba(16,42,67,.24);
+      transition: .25s ease;
+    }
+    .float-btn:hover { transform: translateY(-4px) scale(1.04); }
+    .whatsapp { background: #25d366; }
+    .call { background: var(--primary-dark); }
+    .reveal { opacity: 0; transform: translateY(18px); animation: reveal .8s ease forwards; }
+    .delay-1 { animation-delay: .12s; }
+    .delay-2 { animation-delay: .22s; }
+    @keyframes reveal { to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 900px) {
+      .menu { display: none; }
+      .hero-grid, .about, .location-wrap, .footer-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 54px; }
+      .hero-card { min-height: 420px; }
+      .hero-photo { min-height: 392px; }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 30px, 1180px); }
+      .nav .btn { display: none; }
+      .hero-actions, .cta-actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .panel { padding: 24px; }
+      section { padding: 64px 0; }
+      .floating-review { left: 22px; right: 22px; bottom: 22px; }
+      .footer-links { grid-template-columns: 1fr; }
+      .float-buttons { right: 14px; bottom: 14px; }
+      .float-btn { width: 54px; height: 54px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#inicio" class="brand" aria-label="ORTOCLINIC inicio">
+        <div class="brand-icon">✦</div>
+        <span>ORTOCLINIC<small>Dra. Deyanira Salas</small></span>
+      </a>
+      <nav class="menu" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#acerca">Acerca de</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="btn btn-primary" href="https://wa.me/524444778656?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20ORTOCLINIC" target="_blank" rel="noopener">Agendar cita</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="badge">5.0 ★ en Google Maps</div>
+          <h1>Sonrisas saludables con atención profesional</h1>
+          <p>Ortodoncia y cuidado dental personalizado en Soledad de Graciano Sánchez.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/524444778656?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20ORTOCLINIC" target="_blank" rel="noopener">Agendar cita por WhatsApp</a>
+            <a class="btn btn-outline" href="#ubicacion">Ver ubicación</a>
+          </div>
+        </div>
+        <div class="hero-card reveal delay-1">
+          <div class="hero-photo" role="img" aria-label="Consulta odontológica profesional"></div>
+          <div class="floating-review">
+            <div class="stars">★★★★★</div>
+            <strong>Clínica dental con atención cercana y profesional</strong>
+            <small>ORTOCLINIC Dra. Deyanira Salas</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="acerca">
+      <div class="container about">
+        <div class="about-image reveal" role="img" aria-label="Consultorio dental moderno"></div>
+        <div class="panel reveal delay-1">
+          <div class="eyebrow">Acerca de ORTOCLINIC</div>
+          <h2>Atención dental personalizada en un ambiente de confianza</h2>
+          <p class="lead">ORTOCLINIC Dra. Deyanira Salas es una clínica orientada a la ortodoncia y atención dental personalizada, ubicada en Soledad de Graciano Sánchez.</p>
+          <br>
+          <p class="lead">Su enfoque se centra en brindar un trato amable, seguimiento al paciente, tratamientos profesionales y una experiencia cercana para que cada persona se sienta acompañada durante su proceso dental.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="eyebrow">Servicios principales</div>
+          <h2>Cuidado dental enfocado en tu sonrisa</h2>
+          <p>Servicios presentados de forma clara para facilitar la valoración y el contacto directo con la clínica.</p>
+        </div>
+        <div class="grid-3">
+          <article class="service-card reveal"><div class="icon">🦷</div><h3>Ortodoncia</h3><p>Atención enfocada en mejorar la alineación dental y funcionalidad de la sonrisa.</p></article>
+          <article class="service-card reveal delay-1"><div class="icon">🔎</div><h3>Valoración dental</h3><p>Revisión inicial para conocer las necesidades del paciente y orientar el tratamiento.</p></article>
+          <article class="service-card reveal delay-2"><div class="icon">📋</div><h3>Seguimiento de tratamiento</h3><p>Acompañamiento durante el proceso para mantener control y evolución adecuada.</p></article>
+          <article class="service-card reveal"><div class="icon">🤝</div><h3>Atención personalizada</h3><p>Trato cercano, amable y adaptado a las necesidades de cada paciente.</p></article>
+          <article class="service-card reveal delay-1"><div class="icon">✨</div><h3>Cuidado estético de la sonrisa</h3><p>Orientación para lograr una sonrisa saludable, funcional y estética.</p></article>
+          <article class="service-card reveal delay-2"><div class="icon">💬</div><h3>Orientación en salud bucal</h3><p>Información práctica para mejorar hábitos y cuidado dental diario.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" id="opiniones">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="eyebrow">Opiniones y calificaciones</div>
+          <h2>Lo que opinan nuestros pacientes</h2>
+        </div>
+        <div class="rating-box reveal">
+          <div class="number">5.0</div>
+          <div class="stars">★★★★★</div>
+          <p>2 opiniones en Google</p>
+        </div>
+        <div class="grid-2">
+          <article class="review-card reveal">
+            <div class="stars">★★★★★</div>
+            <h3>Luigi Santos Cruz</h3>
+            <p>“La Dra. Deyanira la mejor ortodoncista 🥰 acabé mi tratamiento en tres años ❤️ es muy amable y la atención excelente tanto de ella como del personal…”</p>
+          </article>
+          <article class="review-card reveal delay-1">
+            <div class="stars">★★★★★</div>
+            <h3>Margarita Castañeda</h3>
+            <p>Reseña de 5 estrellas en Google.</p>
+          </article>
+        </div>
+        <div style="text-align:center; margin-top:28px;">
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=ORTOCLINIC%20Dra.%20Deyanira%20Salas%20Miguel%20Hidalgo%20102A-int%201%20Soledad%20de%20Graciano%20S%C3%A1nchez" target="_blank" rel="noopener">Ver opiniones en Google</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="vision">
+      <div class="container">
+        <div class="vision-card reveal">
+          <div class="eyebrow" style="color:#9ff4ee;">Nuestra visión</div>
+          <h2>Nuestra visión</h2>
+          <p>En ORTOCLINIC buscamos que cada paciente se sienta acompañado durante todo su tratamiento, ofreciendo una atención cercana, profesional y enfocada en lograr sonrisas saludables, funcionales y estéticas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ubicacion">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="eyebrow">Sucursal principal</div>
+          <h2>Visítanos en Soledad de Graciano Sánchez</h2>
+        </div>
+        <div class="location-wrap">
+          <div class="panel reveal">
+            <h3>ORTOCLINIC Dra. Deyanira Salas</h3>
+            <div class="info-list">
+              <div class="info-item"><span>📍</span><div><strong>Dirección</strong>Miguel Hidalgo 102A-int 1, Soledad de Graciano Sánchez, 78430 Soledad de Graciano Sánchez, S.L.P.</div></div>
+              <div class="info-item"><span>☎️</span><div><strong>Teléfono</strong>444 477 8656</div></div>
+              <div class="info-item"><span>🗺️</span><div><strong>Código Plus</strong>53P6+RX Soledad de Graciano Sánchez, San Luis Potosí</div></div>
+              <div class="info-item"><span>🕘</span><div><strong>Horario visible</strong>Cerrado · Abre a las 11:00 a.m. del jueves</div></div>
+            </div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Miguel%20Hidalgo%20102A-int%201%2C%20Soledad%20de%20Graciano%20S%C3%A1nchez%2C%20S.L.P." target="_blank" rel="noopener">Cómo llegar</a>
+              <a class="btn btn-outline" href="https://wa.me/524444778656?text=Hola%2C%20quiero%20informes%20de%20ORTOCLINIC" target="_blank" rel="noopener">Enviar mensaje por WhatsApp</a>
+            </div>
+          </div>
+          <iframe class="reveal delay-1" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Miguel%20Hidalgo%20102A-int%201%2C%20Soledad%20de%20Graciano%20S%C3%A1nchez%2C%2078430%20Soledad%20de%20Graciano%20S%C3%A1nchez%2C%20S.L.P.&output=embed" title="Mapa de ORTOCLINIC Dra. Deyanira Salas"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="casos">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="eyebrow">Casos y tratamientos</div>
+          <h2>Vista previa de tratamientos</h2>
+          <p>Cada tratamiento es personalizado de acuerdo con las necesidades de cada paciente.</p>
+        </div>
+        <div class="grid-3">
+          <article class="gallery-card reveal"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80')"></div><p>Ortodoncia y sonrisas con brackets.</p></article>
+          <article class="gallery-card reveal delay-1"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=900&q=80')"></div><p>Consultorio dental profesional.</p></article>
+          <article class="gallery-card reveal delay-2"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=80')"></div><p>Imágenes genéricas de cuidado dental.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="confianza">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="eyebrow">Confianza</div>
+          <h2>Razones para elegir ORTOCLINIC</h2>
+        </div>
+        <div class="grid-3">
+          <article class="trust-card reveal"><div class="icon">😊</div><h3>Atención amable</h3><p>Trato cercano para que cada visita sea más cómoda.</p></article>
+          <article class="trust-card reveal delay-1"><div class="icon">📝</div><h3>Tratamientos personalizados</h3><p>Cada caso se orienta según las necesidades del paciente.</p></article>
+          <article class="trust-card reveal delay-2"><div class="icon">📍</div><h3>Ubicación accesible</h3><p>En Miguel Hidalgo, Soledad de Graciano Sánchez.</p></article>
+          <article class="trust-card reveal"><div class="icon">⭐</div><h3>Excelente calificación</h3><p>5.0 estrellas en Google Maps.</p></article>
+          <article class="trust-card reveal delay-1"><div class="icon">📲</div><h3>Comunicación directa</h3><p>Contacto rápido por teléfono o WhatsApp.</p></article>
+          <article class="trust-card reveal delay-2"><div class="icon">🧼</div><h3>Imagen limpia y profesional</h3><p>Una experiencia digital alineada a salud, higiene y confianza.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contacto">
+      <div class="container">
+        <div class="cta-box reveal">
+          <h2>Agenda tu valoración y comienza a transformar tu sonrisa</h2>
+          <p>Comunícate con ORTOCLINIC Dra. Deyanira Salas para recibir información y programar tu visita.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://wa.me/524444778656?text=Hola%2C%20quiero%20agendar%20mi%20valoraci%C3%B3n%20en%20ORTOCLINIC" target="_blank" rel="noopener">Agendar cita</a>
+            <a class="btn btn-outline" href="tel:4444778656">Llamar ahora</a>
+            <a class="btn btn-outline" href="#ubicacion">Ver ubicación</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>ORTOCLINIC Dra. Deyanira Salas</h3>
+          <p>Ortodoncista en Soledad de Graciano Sánchez</p>
+          <p>Teléfono: 444 477 8656</p>
+          <p>Miguel Hidalgo 102A-int 1, Soledad de Graciano Sánchez, 78430 Soledad de Graciano Sánchez, S.L.P.</p>
+        </div>
+        <div>
+          <h3>Enlaces rápidos</h3>
+          <div class="footer-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#acerca">Acerca de</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#opiniones">Opiniones</a>
+            <a href="#ubicacion">Ubicación</a>
+            <a href="#contacto">Contacto</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">© 2026 ORTOCLINIC Dra. Deyanira Salas. Página demo de presencia digital.</div>
+    </div>
+  </footer>
+
+  <div class="float-buttons" aria-label="Botones flotantes de contacto">
+    <a class="float-btn whatsapp" href="https://wa.me/524444778656?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20ORTOCLINIC" target="_blank" rel="noopener" aria-label="Enviar WhatsApp">☘</a>
+    <a class="float-btn call" href="tel:4444778656" aria-label="Llamar ahora">☎</a>
+  </div>
+</body>
+</html>
